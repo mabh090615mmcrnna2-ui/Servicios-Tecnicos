@@ -5,7 +5,7 @@ def conectar():
         conexion = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="",  # Deja comillas vacías si usas XAMPP por defecto
+            password="",  
             database="tecnico"
         )
         return conexion
