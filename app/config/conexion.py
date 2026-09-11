@@ -1,22 +1,14 @@
 import mysql.connector
-from mysql.connector import Error
-
-HOST = "localhost"
-USER = "root"
-PASSWORD = ""  # Si tu MySQL tiene contraseña, ponla aquí
-DATABASE = "tecnico"
 
 def conectar():
     try:
         conexion = mysql.connector.connect(
-            host=HOST,
-            user=USER,
-            password=PASSWORD,
-            database=DATABASE
+            host="localhost",
+            user="root",
+            password="",  # Deja comillas vacías si usas XAMPP por defecto
+            database="tecnico"
         )
-        if conexion.is_connected():
-            print("Conexión exitosa a la base de datos")
-            return conexion
-    except Error as e:
-        print(f"Error al conectar a la base de datos: {e}")
+        return conexion
+    except Exception as e:
+        print(f"Error de conexión: {e}")
         return None
